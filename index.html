@@ -1,0 +1,429 @@
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53775284-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-53775284-6');
+</script>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<link rel="icon" href="https://nv-tlabs.github.io/images/logo_hu2fe6632db44d28c9b9d53edd3914c1d6_112452_0x70_resize_lanczos_2.png">
+
+
+
+</head>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+        margin: 0.4em;
+    }
+
+    p {
+        margin: 0.2em;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        margin: 0;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+  <head>
+        <title>DatasetGAN</title>
+  </head>
+
+  <body>
+    <br>
+    <center>
+    <span style="font-size:42px">DatasetGAN: Efficient Labeled Data Factory with Minimal Human Effort</span>
+    </center>
+
+    <br>
+      <table align=center width=700px>
+       <tr> 
+
+                <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://www.alexyuxuanzhang.com/">Yuxuan Zhang *</a><sup>1,4</sup></span>
+        </center>
+        </td>
+
+
+
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~linghuan/">Huan Ling *</a><sup>1,2,3</sup></span>
+        </center>
+        </td>
+
+
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~jungao/">Jun Gao </a><sup>1,2,3</sup></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://kangxue.org/">Kangxue Yin </a><sup>1</sup></span>
+        </center>
+        </td>
+
+
+
+       
+     </tr>
+    </table>
+
+
+      <table align=center width=700px>
+
+    <tr>
+              <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="">Jean-Francois Lafleche</a><sup>1</sup></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="">Adela Barriuso</a><sup>5</sup></span>
+        </center>
+        </td>
+                <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://groups.csail.mit.edu/vision/torralbalab/"> Antonio Torralba</a><sup>5</sup></span>
+        </center>
+        </td>
+
+      <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~fidler/">Sanja Fidler</a><sup>1,2,3</sup></span>
+            </center>
+        </td>
+
+       
+     </tr>
+    </table>
+
+
+
+    <br>
+    <table align=center width=700px>
+       <tr>
+              <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>1</sup>NVIDIA</span>
+            </center>
+        </td>
+
+
+        <td align=center width=100px>
+        <center>
+
+        <span style="font-size:20px"><sup>2</sup>University of Toronto</span>
+        </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>3</sup>Vector Institute</span>
+            </center>
+        </td>
+                <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>4</sup>University of Waterloo</span>
+            </center>
+        </td>
+    
+     <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>5</sup>MIT</span>
+            </center>
+        </td>
+     </tr>
+    </table>
+    
+    <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+  
+        </td>
+     </tr>
+    </table>
+
+            <br>
+            <table align=center width=900px>
+                        <tr>    
+                      <center>
+                       <br>
+                    </center>
+                   
+                    </td>
+               
+                      
+                <tr>
+                        <td width=600px>
+
+                      <center>
+
+                       
+                     
+                             <img src = "./resources/intro.png" width="900px" height="300px"></img>
+                                                 <span style="font-size:15px;font-style:italic">   DATASETGAN synthesizes image-annotation pairs, and can produce large high-quality datasets with detailed pixel-wise labels. Figure illus- trates the 4 steps. (1 & 2). Leverage StyleGAN and annotate only a handful of synthesized images. Train a highly effective branch to generate labels. (3). Generate a huge synthetic dataset of annotated images authomatically. (4). Train your favorite approach with the synthetic dataset and test on real images.</span>
+
+                    </center>
+
+                    </td>
+                         </tr>
+           
+                </tr>
+            </table>
+            <table align=center width=900px></table>
+
+                <tr>
+                    <td width=600px>
+                        <br>
+                        <p align="justify" style="font-size: 18px">
+                         We introduce DatasetGAN: an automatic procedure to generate massive datasets of high-quality semantically segmented images requiring minimal human effort. Current deep networks are extremely data-hungry, benefiting from training on large-scale datasets, which are time consuming to annotate. Our method relies on the power of recent GANs to generate realistic images. We show how the GAN latent code can be decoded to produce a semantic segmentation of the image. Training the decoder only needs a few labeled examples to generalize to the rest of the latent space, resulting in an infinite annotated dataset generator! These generated datasets can then be used for training any computer vision architecture just as real datasets are. As only a few images need to be manually segmented, it becomes possible to annotate images in extreme detail and generate datasets with rich object and part segmentations. To showcase the power of our approach, we generated datasets for 7 image segmentation tasks which include pixel-level labels for 34 human face parts, and 32 car parts. Our approach outperforms all semi-supervised baselines significantly and is on par with fully supervised methods using labor intensive annotations.
+                        </p> </td>
+
+                             <center>
+                              <td width=600px>
+                         <img src = "./resources/pipeline.png" width="700px" height="230px"></img>
+                         <img src = "./resources/demo.gif" width="260px" height="250px"></img><br>
+                                    <span style="font-size:14px">   Left: Overall architecture of our DATASETGAN. Right: The video above shows the result of running a DeepLab trained with a dataset generated from just 16 annotated images. </span>
+                                     
+
+                         <br>
+                    </center>
+
+                    </td>
+                </tr>
+      
+            </table>
+
+          <br>
+   <!--        <hr>
+            <table align=center width=700>
+             <center><h1>News</h1></center>
+                <tr>
+                <ul>
+                <li>[17 July 2020] Paper Accpet</li>
+                </ul>
+                </tr>
+            </table>
+         <br>
+         <hr> -->
+         <!-- <table align=center width=550px> -->
+            <table align=center width=700>
+             <center><h1>Paper</h1></center>
+                <tr>
+                  <td><a href=""><img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/></a></td>
+
+   
+                  <td> Yuxuan Zhang *, Huan Ling *, Jun Gao, Kangxue Yin, <br> Jean-Francois Lafleche, Adela Barriuso, Antonio Torralba, Sanja Fidler
+<br><br>
+ <span style="background-color:#00FEFE">  CVPR 2021 (Oral)</span>
+             
+<br><br> * authors contributed equally<br><br>
+                              
+                    <span style="font-size:18px">
+                      <a href="">[Download Paper]</a></
+                    <span style="font-size:18px">   <a href="./bib.tex">[Bibtex]</a></span>
+                           <span style="font-size:18px">   <a href="">[Code Coming Soon]</a></span>
+
+          
+
+
+                    </td>
+
+  
+
+              </tr>
+               
+                
+                
+   
+              <tr>
+                  <td colspan="5" style="font-size: 14px">
+    
+                  </td>
+              </tr>
+
+
+
+            </table>
+            <br>
+
+            <br>
+        <hr>
+
+ <center><h1>News</h1></center>
+
+<ul><li>
+[April 2021] Paper accepted at CVPR 2021 as Oral!
+</li>
+</ul>
+
+ <hr>
+          <center><h1>Results</h1></center>
+
+          <table align=center width=900px>
+              <tr>
+                   <center>
+                        <a href="./resources/datasetgan1.png"><img src = "./resources/datasetgan1.png" width="900px"></img></a><br>
+                    </center>
+                       <center>
+                        <a href="./resources/datasetgan2.png"><img src = "./resources/datasetgan2.png" width="900px"></img></a><br>
+                    </center>
+                </tr>
+            <tr>
+                <center>
+                    <span style="font-size:14px">
+                         Examples of synthesized images and labels from our DATASETGAN for different classes. Less than 40 annotated images are used for each class. Refer to our paper for details.
+                        </span>
+                    </center>
+            </tr>
+          
+             <tr>
+                   <center>
+                        <a href="./resources/datasetgan3.png"><img src = "./resources/datasetgan3.png" width="900px"></img></a><br>
+                    </center>
+                </tr>
+            <tr>
+                <center>
+                    <span style="font-size:14px">
+                          We visualize predictions of DeepLab trained on DATASETGAN's datasets, compared to ground-truth annotations. 
+                        </span>
+                    </center>
+            </tr>
+             <br><br>
+
+                  <tr>
+                   <center>
+                        <a href="./resources/datasetgan4.png"><img src = "./resources/datasetgan4.png" width="900px"></img></a><br>
+                    </center>
+                </tr>
+      
+
+            <tr>
+                <center>
+                    <span style="font-size:14px">
+                     We showcase our detailed part segmentation and keypoint detection in reconstructing animatable 3D objects from monocular images.
+
+                        </span>
+                    </center>
+            </tr>
+            
+
+           
+          </table>
+ 
+
+</body>
+</html>
