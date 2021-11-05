@@ -13,7 +13,7 @@
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 
 <link rel="icon" href="https://nv-tlabs.github.io/images/logo_hu2fe6632db44d28c9b9d53edd3914c1d6_112452_0x70_resize_lanczos_2.png">
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 </head>
@@ -27,7 +27,39 @@
         margin-right: auto;
         width: 1100px;
     }
+    .topnav {
+      background-color: #eeeeee;
+      overflow: hidden;
+    }
 
+    .topnav div {
+      max-width: 1070px;
+      margin: 0 auto;
+    }
+
+    .topnav a {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      vertical-align: middle;
+      padding: 16px 16px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .topnav img {
+      width: 100%;
+      margin: 0.2em 0px 0.3em 0px;
+    }
+    .venue {
+      color: black;
+      text-align: center;
+    }
+    #bibtex pre {
+        font-size: 14px;
+        background-color: #eee;
+        padding: 16px;
+    }
     h1 {
         font-weight:300;
         margin: 0.4em;
@@ -68,15 +100,43 @@
         -moz-border-radius: 10px ;
         -webkit-border-radius: 10px ;
     }
+  .paper-btn {
+    position: relative;
+    text-align: center;
 
-    a:link,a:visited
+    display: inline-block;
+    margin: 8px;
+    padding: 8px 8px;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    
+    background-color: #76B900;
+    color: black !important;
+    font-size: 20px;
+    width: 100px;
+    font-weight: 600;
+  }
+  .paper-btn-parent {
+      display: flex;
+      justify-content: center;
+      margin: 16px 0px;
+  }
+  .paper-btn:hover {
+      opacity: 0.85;
+  }
+  .material-icons {
+      vertical-align: -6px;
+  }
+/*    a:link,a:visited
     {
         color: #1367a7;
         text-decoration: none;
     }
     a:hover {
         color: #208799;
-    }
+    }*/
 
     td.dl-link {
         height: 160px;
@@ -132,26 +192,31 @@
 
 <html>
   <head>
-        <title>DatasetGAN</title>
+        <title>EditGAN</title>
   </head>
 
   <body>
+    <div class="topnav" id="myTopnav">
+      <div>
+        <a href="https://www.nvidia.com/"
+          ><img width="100%" src="resources/nvidia.svg"
+        /></a>
+        <a href="https://nv-tlabs.github.io/"
+          ><strong>Toronto AI Lab</strong></a
+        >
+
+      </div>
+    </div>
     <br>
     <center>
-    <span style="font-size:42px">DatasetGAN: Efficient Labeled Data Factory with Minimal Human Effort</span>
+    <span style="font-size:42px">EditGAN: High-Precision Semantic Image Editing</span>
     </center>
 
     <br>
       <table align=center width=700px>
        <tr> 
 
-                <td align=center width=100px>
-        <center>
-        <span style="font-size:20px"><a href="https://www.alexyuxuanzhang.com/">Yuxuan Zhang *</a><sup>1,4</sup></span>
-        </center>
-        </td>
-
-
+  
 
 
         <td align=center width=100px>
@@ -160,19 +225,21 @@
         </center>
         </td>
 
+              <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="https://nv-tlabs.github.io/author/karsten-kreis/">Karsten Kreis *</a><sup>1</sup></span>
+        </center>
+        </td>
+
 
 
         <td align=center width=100px>
         <center>
-        <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~jungao/">Jun Gao </a><sup>1,2,3</sup></span>
+        <span style="font-size:20px"><a href="https://scholar.google.ca/citations?user=8q2ISMIAAAAJ&hl=en">Daiqing Li </a><sup>1</sup></span>
         </center>
         </td>
 
-        <td align=center width=100px>
-        <center>
-        <span style="font-size:20px"><a href="https://kangxue.org/">Kangxue Yin </a><sup>1</sup></span>
-        </center>
-        </td>
+
 
 
 
@@ -186,18 +253,13 @@
     <tr>
               <td align=center width=100px>
         <center>
-        <span style="font-size:20px"><a href="">Jean-Francois Lafleche</a><sup>1</sup></span>
+        <span style="font-size:20px"><a href="https://seung-kim.github.io/seungkim/">Seung Wook Kim </a><sup>1,2,3</sup></span>
         </center>
         </td>
-
-        <td align=center width=100px>
-        <center>
-        <span style="font-size:20px"><a href="">Adela Barriuso</a><sup>5</sup></span>
-        </center>
-        </td>
+          
                 <td align=center width=100px>
         <center>
-        <span style="font-size:20px"><a href="https://groups.csail.mit.edu/vision/torralbalab/"> Antonio Torralba</a><sup>5</sup></span>
+        <span style="font-size:20px"><a href="https://groups.csail.mit.edu/vision/torralbalab/"> Antonio Torralba</a><sup>4</sup></span>
         </center>
         </td>
 
@@ -214,7 +276,7 @@
 
 
     <br>
-    <table align=center width=700px>
+    <table align=center width=900px>
        <tr>
               <td align=center width=100px>
             <center>
@@ -234,47 +296,39 @@
             <span style="font-size:20px"><sup>3</sup>Vector Institute</span>
             </center>
         </td>
-                <td align=center width=100px>
-            <center>
-            <span style="font-size:20px"><sup>4</sup>University of Waterloo</span>
-            </center>
-        </td>
+        
     
      <td align=center width=100px>
             <center>
-            <span style="font-size:20px"><sup>5</sup>MIT</span>
+            <span style="font-size:20px"><sup>4</sup>MIT</span>
             </center>
         </td>
      </tr>
     </table>
-    
-    <table align=center width=700px>
-       <tr>
-        <td align=center width=100px>
-  
-        </td>
-     </tr>
-    </table>
 
-            <br>
+    <br>
+    <p class="venue"><b>NeurIPS 2021</b></p>
+<center>
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://nv-tlabs.github.io/">
+                <span class="material-icons">description</span> 
+                 Paper
+            </a>
+            </div>
+</center>
+<br>
+               <hr><hr>
+
+
+
+
+
+          <!-- <center><h1>Abstract</h1></center> -->
             <table align=center width=900px>
-                        <tr>    
-                      <center>
-                       <br>
-                    </center>
-                   
-                    </td>
-               
-                      
-                <tr>
                         <td width=600px>
-
                       <center>
-
-                       
-                     
-                             <img src = "./resources/intro.png" width="900px" height="270px"></img>
-                                                 <span style="font-size:15px;font-style:italic">   DATASETGAN synthesizes image-annotation pairs, and can produce large high-quality datasets with detailed pixel-wise labels. Figure illus- trates the 4 steps. (1 & 2). Leverage StyleGAN and annotate only a handful of synthesized images. Train a highly effective branch to generate labels. (3). Generate a huge synthetic dataset of annotated images authomatically. (4). Train your favorite approach with the synthetic dataset and test on real images.</span>
+                             <img src = "./resources/editgan_pipeline.png" width="1050px"></img>
+                                                 <span style="font-size:15px;font-style:italic">  (1) EditGAN builds on a GAN framework that jointly models images and their semantic segmentations. (2 & 3) Users can modify segmentation masks, based on which we perform optimization in the GAN’s latent space to realize the edit. (4) Users can perform editing simply by applying previously learnt editing vectors and manipulate images at interactive rates.</span>
 
                     </center>
 
@@ -289,15 +343,35 @@
                     <td width=600px>
                         <br>
                         <p align="justify" style="font-size: 18px">
-                         We introduce DatasetGAN: an automatic procedure to generate massive datasets of high-quality semantically segmented images requiring minimal human effort. Current deep networks are extremely data-hungry, benefiting from training on large-scale datasets, which are time consuming to annotate. Our method relies on the power of recent GANs to generate realistic images. We show how the GAN latent code can be decoded to produce a semantic segmentation of the image. Training the decoder only needs a few labeled examples to generalize to the rest of the latent space, resulting in an infinite annotated dataset generator! These generated datasets can then be used for training any computer vision architecture just as real datasets are. As only a few images need to be manually segmented, it becomes possible to annotate images in extreme detail and generate datasets with rich object and part segmentations. To showcase the power of our approach, we generated datasets for 7 image segmentation tasks which include pixel-level labels for 34 human face parts, and 32 car parts. Our approach outperforms all semi-supervised baselines significantly and is on par with fully supervised methods using labor intensive annotations.
+                       Generative adversarial networks (GANs) have recently found applications in image editing. However, most GAN-based image editing methods often require large-scale datasets with semantic segmentation annotations for training, only provide high level control, or merely interpolate between different images. Here, we propose EditGAN, a novel method for high-quality, high-precision semantic image editing, allowing users to edit images by modifying their highly detailed part segmentation masks, e.g., drawing a new mask for the headlight of a car. EditGAN builds on a GAN framework that jointly models images and their semantic segmentations (DatasetGAN), requiring only a handful of labeled examples – making it a scalable tool for editing. Specifically, we embed an image into the GAN’s latent space and perform conditional latent code optimization according to the segmentation edit, which effectively also modifies the image. To amortize optimization, we find “editing vectors” in latent space that realize the edits. The framework allows us to learn an arbitrary number of editing vectors, which can then be directly applied on other images at interactive rates. We experimentally show that EditGAN can manipulate images with an unprecedented level of detail and freedom, while preserving full image quality. We can also easily combine multiple edits and perform plausible edits beyond EditGAN’s training data. We demonstrate EditGAN on a wide variety of image types and quantitatively outperform several previous editing methods on standard editing benchmark tasks.
+                       <br><br>
+                       EditGAN is the first GAN-driven image editing framework, which simultaneously <i>(i)</i> offers very high-precision editing, <i>(ii)</i> requires only very little annotated training data (and does not rely on external classifiers), <i>(iii)</i> can be run interactively in real time, <i>(iv)</i> allows for straightforward compositionality of multiple edits, <i>(v)</i> and works on real embedded, GAN-generated, and even out-of-domain images.
                         </p> </td>
+      <br>      <br>
+        <hr><hr>
+
+
+ <center><h1>News</h1></center>
+
+<ul>
+<li>[November 2021] Project released on <a href="https://nv-tlabs.github.io/">arXiv</a>!</li>
+<li>[September 2021] Paper accepted at NeurIPS 2021!</li>
+</ul>
+<hr><hr>
+
+ <center><h1>Demos</h1></center>
 
                              <center>
-                              <td width=600px>
-                         <img src = "./resources/demo2.gif" width="450px" height="250px"></img>
-                         <img src = "./resources/interp.gif" width="230px" height="250px"></img><br>
-                                    <span style="font-size:14px">   Left: The video showcases our detailed part segmentation in reconstructing animatable 3D objects from monocular
-images. Right: The video shows the result of running interpolation over latent space. </span>
+                              <td width=300px>
+                         <img src = "./resources/demo2.gif" width="500px" height="300px"></img>
+
+                         <img src = "./resources/demo.gif" width="500px" height="300px"></img><br>
+                                           <span style="font-size:14px">   <i>Left:</i> The video showcases EditGAN in an interacitve demo tool. <i>Right:</i> The video showcases EditGAN where we apply multiple edits and exploit pre-defined editing vectors. </span><br><br>
+
+                                                  <img src = "./resources/demo_interp.gif" width="450px" height="350px"></img>
+
+                         <img src = "./resources/demo_cross.gif" width="350px" height="350px"></img><br>
+                                    <span style="font-size:14px">   <i>Left:</i> The video shows interpolation of editing vectors. <i>Right:</i> The video shows the result of applying EditGAN editing vectors on out-of-domain images. </span>
                                      
 
                          <br>
@@ -309,36 +383,92 @@ images. Right: The video shows the result of running interpolation over latent s
             </table>
 
           <br>
-   <!--        <hr>
-            <table align=center width=700>
-             <center><h1>News</h1></center>
-                <tr>
-                <ul>
-                <li>[17 July 2020] Paper Accpet</li>
-                </ul>
+               <hr><hr>
+
+
+
+
+
+          <center><h1>Results</h1></center>
+
+          <table align=center width=900px>
+              <tr>
+                   <center>
+                        <a href="./resources/results1.png"><img src = "./resources/results1.png" width="900px"></img></a><br>
+                    </center>
+                 
                 </tr>
-            </table>
-         <br>
-         <hr> -->
-         <!-- <table align=center width=550px> -->
-            <table align=center width=700>
+            <tr>
+                <center>
+                    <span style="font-size:14px">
+                         Examples of segmentation-driven edits with EditGAN. <i>Blue boxes:</i> Original images. <i>Orange boxes:</i> Zoom-in view.
+                        </span>
+                    </center>
+            </tr>
+          
+             <tr>
+                        <center>
+                        <a href="./resources/results2.png"><img src = "./resources/results2.png" width="900px"></img></a><br>
+                    </center>
+                </tr>
+            <tr>
+                <center>
+                    <span style="font-size:14px">
+                        We combine multiple edits. <i>Blue boxes:</i> Original images. <i>Edits in detail:</i> <i>Second row, first person:</i> open eyes, add hair, add mustache. <i>Second person:</i> smile, look left. <i>Third row, first car:</i> remove mirror, remove door handle, shrink wheels. <i>Second car:</i> remove license plate, enlarge wheels. <i>Third row, bird:</i> longer beak, bigger belly, head up. <i>Third row, cat:</i> open mouth, bigger ears, bigger eyes
+                        </span>
+                    </center>
+            </tr>
+             <br><br>
+
+
+                  <tr>
+                   <center>
+                        <a href="./resources/results3.png"><img src = "./resources/results3.png" width="900px"></img></a><br>
+                    </center>
+                </tr>
+      
+
+            <tr>
+                <center>
+                    <span style="font-size:14px">
+                     We showcase high-precision editing by wheel/spoke rotation. <i>First row:</i> Image and mask pair to learn editing vector. Images are images before editing and after editing. Segmentation masks are before editing and target segmentation mask after manual modification. <i>Second to fourth rows:</i> Applying the learnt edit on new images.
+
+                        </span>
+                    </center>
+            </tr>
+            
+
+           
+          </table>
+ 
+<br>
+<hr><hr>
+
+
+
+
+
+
+
+            <table align=center width=800>
+
              <center><h1>Paper</h1></center>
                 <tr>
-                  <td><a href=""><img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/></a></td>
+                  <td><a href=""><img style="height:330px; border: solid; border-radius:30px;" src="./resources/paper.png"/></a></td>
 
-   
-                  <td> Yuxuan Zhang *, Huan Ling *, Jun Gao, Kangxue Yin, <br> Jean-Francois Lafleche, Adela Barriuso, Antonio Torralba, Sanja Fidler
-<br><br>
- <span style="background-color:#00FEFE">  CVPR 2021 (Oral)</span>
-             
-<br><br> * authors contributed equally<br><br>
+                  <td><span><b>EditGAN:<br>High-Precision Semantic Image Editing</b></span><br><br>
+                   Huan Ling*, Karsten Kreis*,  Daiqing Li,  <br> Seung Wook Kim, Antonio Torralba, Sanja Fidler
+<br><br><i> * Authors contributed equally</i><br><br>
+ <!-- <span style="background-color:#00FEFE">  Neurips'21 </span> -->
+ <span><b> NeurIPS'21 </b></span><br><br>
                               
                     <span style="font-size:18px">
-                      <a href="https://arxiv.org/abs/2104.06490" target="_blank">[Download Paper]</a></
-                    <span style="font-size:18px">   <a href="./bib.txt" target="_blank">[Bibtex]</a></span>
-                           <span style="font-size:18px">   <a href="https://github.com/nv-tlabs/datasetGAN_release/" target="_blank">[Code and Data]</a></span>
+                      <a href="" target="_blank">[Paper]</a></
+                           <span style="font-size:18px"> &nbsp;&nbsp;&nbsp;&nbsp;  <a href="" target="_blank">[Code and Interactive Editing Tool]</a> (coming soon)</span>
 
-          
+                <br>
+                <br>
+                <p>For feedback and questions please reach out to <a href="mailto:huling@nvidia.com">Huan Ling</a> and <a href="mailto:kkreis@nvidia.com">Karsten Kreis</a>.</p>
 
 
                     </td>
@@ -362,74 +492,28 @@ images. Right: The video shows the result of running interpolation over latent s
             <br>
 
             <br>
-        <hr>
 
- <center><h1>News</h1></center>
 
-<ul><li>
-[April 2021] Paper accepted at CVPR 2021 as Oral!
-</li>
 
-<li>
-[April 2021] Checkout our <a href="https://blogs.nvidia.com/blog/2021/04/16/gan-research-knight-rider-ai-omniverse/">GTC'21 story</a> with ICLR'21 Oral paper  <a href="https://arxiv.org/abs/2010.09125">Ganverse3D</a>      
-</li>
+        <hr><hr>
 
-</ul>
+ <center><h1>Citation</h1></center>
+<section id="bibtex">
 
- <hr>
-          <center><h1>Results</h1></center>
+      <p style="line-height: 1.75em; text-align: left;">If you find this work useful for your research, please consider citing it as:</p>
+      <pre><code>@inproceedings{ling2021editgan,
+  title = {EditGAN: High-Precision Semantic Image Editing}, 
+  author = {Huan Ling and Karsten Kreis and Daiqing Li and Seung Wook Kim and Antonio Torralba and Sanja Fidler},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year = {2021}
+}
+</code></pre>
+</section>
 
-          <table align=center width=900px>
-              <tr>
-                   <center>
-                        <a href="./resources/datasetgan1.png"><img src = "./resources/datasetgan1.png" width="900px"></img></a><br>
-                    </center>
-                       <center>
-                        <a href="./resources/datasetgan2.png"><img src = "./resources/datasetgan2.png" width="900px"></img></a><br>
-                    </center>
-                </tr>
-            <tr>
-                <center>
-                    <span style="font-size:14px">
-                         Examples of synthesized images and labels from our DATASETGAN for different classes. Less than 40 annotated images are used for each class. Refer to our paper for details.
-                        </span>
-                    </center>
-            </tr>
-          
-             <tr>
-                   <center>
-                        <a href="./resources/datasetgan3.png"><img src = "./resources/datasetgan3.png" width="900px"></img></a><br>
-                    </center>
-                </tr>
-            <tr>
-                <center>
-                    <span style="font-size:14px">
-                          We visualize predictions of DeepLab trained on DATASETGAN's datasets, compared to ground-truth annotations. 
-                        </span>
-                    </center>
-            </tr>
-             <br><br>
 
-                  <tr>
-                   <center>
-                        <a href="./resources/datasetgan4.png"><img src = "./resources/datasetgan4.png" width="900px"></img></a><br>
-                    </center>
-                </tr>
-      
+<hr>
+<hr>
 
-            <tr>
-                <center>
-                    <span style="font-size:14px">
-                     We showcase our detailed part segmentation and keypoint detection in reconstructing animatable 3D objects from monocular images.
-
-                        </span>
-                    </center>
-            </tr>
-            
-
-           
-          </table>
- 
 
 </body>
 </html>
