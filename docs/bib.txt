@@ -1,0 +1,6 @@
+@inproceedings{ling2021editgan,
+  title = {EditGAN: High-Precision Semantic Image Editing}, 
+  author = {Huan Ling and Karsten Kreis and Daiqing Li and Seung Wook Kim and Antonio Torralba and Sanja Fidler},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year = {2021}
+}
