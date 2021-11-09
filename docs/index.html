@@ -343,7 +343,7 @@
                     <td width=600px>
                         <br>
                         <p align="justify" style="font-size: 18px">
-                       Generative adversarial networks (GANs) have recently found applications in image editing. However, most GAN-based image editing methods often require large-scale datasets with semantic segmentation annotations for training, only provide high level control, or merely interpolate between different images. Here, we propose EditGAN, a novel method for high-quality, high-precision semantic image editing, allowing users to edit images by modifying their highly detailed part segmentation masks, e.g., drawing a new mask for the headlight of a car. EditGAN builds on a GAN framework that jointly models images and their semantic segmentations (DatasetGAN), requiring only a handful of labeled examples – making it a scalable tool for editing. Specifically, we embed an image into the GAN’s latent space and perform conditional latent code optimization according to the segmentation edit, which effectively also modifies the image. To amortize optimization, we find “editing vectors” in latent space that realize the edits. The framework allows us to learn an arbitrary number of editing vectors, which can then be directly applied on other images at interactive rates. We experimentally show that EditGAN can manipulate images with an unprecedented level of detail and freedom, while preserving full image quality. We can also easily combine multiple edits and perform plausible edits beyond EditGAN’s training data. We demonstrate EditGAN on a wide variety of image types and quantitatively outperform several previous editing methods on standard editing benchmark tasks.
+                       Generative adversarial networks (GANs) have recently found applications in image editing. However, most GAN-based image editing methods often require large-scale datasets with semantic segmentation annotations for training, only provide high level control, or merely interpolate between different images. Here, we propose EditGAN, a novel method for high-quality, high-precision semantic image editing, allowing users to edit images by modifying their highly detailed part segmentation masks, e.g., drawing a new mask for the headlight of a car. EditGAN builds on a GAN framework that jointly models images and their semantic segmentations (<a href="https://nv-tlabs.github.io/datasetGAN/">DatasetGAN</a>), requiring only a handful of labeled examples – making it a scalable tool for editing. Specifically, we embed an image into the GAN’s latent space and perform conditional latent code optimization according to the segmentation edit, which effectively also modifies the image. To amortize optimization, we find “editing vectors” in latent space that realize the edits. The framework allows us to learn an arbitrary number of editing vectors, which can then be directly applied on other images at interactive rates. We experimentally show that EditGAN can manipulate images with an unprecedented level of detail and freedom, while preserving full image quality. We can also easily combine multiple edits and perform plausible edits beyond EditGAN’s training data. We demonstrate EditGAN on a wide variety of image types and quantitatively outperform several previous editing methods on standard editing benchmark tasks.
                        <br><br>
                        EditGAN is the first GAN-driven image editing framework, which simultaneously <i>(i)</i> offers very high-precision editing, <i>(ii)</i> requires only very little annotated training data (and does not rely on external classifiers), <i>(iii)</i> can be run interactively in real time, <i>(iv)</i> allows for straightforward compositionality of multiple edits, <i>(v)</i> and works on real embedded, GAN-generated, and even out-of-domain images.
                         </p> </td>
@@ -508,6 +508,30 @@
   year = {2021}
 }
 </code></pre>
+
+See prior work on efficient semantic segmentation using GANs, which EditGAN builds on:  <br>
+<a href="https://nv-tlabs.github.io/datasetGAN/">DatasetGAN</a>
+
+     <pre><code>@inproceedings{zhang21,
+  title={DatasetGAN: Efficient Labeled Data Factory with Minimal Human Effort},
+  author={Zhang, Yuxuan and Ling, Huan and Gao, Jun and Yin, Kangxue and Lafleche, 
+  Jean-Francois and Barriuso, Adela and Torralba, Antonio and Fidler, Sanja},
+  booktitle={CVPR},
+  year={2021}
+}
+</code></pre>
+
+ <a href="https://nv-tlabs.github.io/semanticGAN/">SemanticGAN</a>
+
+      <pre><code>@inproceedings{semanticGAN, 
+title={Semantic Segmentation with Generative Models: Semi-Supervised Learning and Strong Out-of-Domain Generalization}, 
+booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+author={Li, Daiqing and Yang, Junlin and Kreis, Karsten and Torralba, Antonio and Fidler, Sanja}, 
+year={2021}, 
+}
+</code></pre>
+
+<br>
 </section>
 
 
